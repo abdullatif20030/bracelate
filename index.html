@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AUREL — Fine Bracelets, Handcrafted</title>
+<meta name="description" content="AUREL crafts fine bracelets in 18k gold vermeil and recycled sterling silver. Explore the collection, best sellers, and limited editions.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div class="preloader" id="preloader">
+  <div class="preloader__mark">AUREL</div>
+  <div class="preloader__line"><span></span></div>
+</div>
+
+<!-- ============ CUSTOM CURSOR ============ -->
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" id="header">
+  <div class="header__inner">
+    <button class="header__burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="#home" class="header__logo">AUREL</a>
+
+    <nav class="header__nav" id="headerNav">
+      <a href="#collections" class="nav-link">Collections</a>
+      <a href="#bestsellers" class="nav-link">Best Sellers</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#reviews" class="nav-link">Reviews</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header__actions">
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Switch theme"><i class="fa-light fa-sun"></i></button>
+      <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="fa-light fa-magnifying-glass"></i></button>
+      <button class="icon-btn" id="wishlistBtn" aria-label="Wishlist"><i class="fa-light fa-heart"></i><span class="badge" id="wishBadge">0</span></button>
+      <button class="icon-btn" id="cartBtn" aria-label="Shopping bag"><i class="fa-light fa-bag-shopping"></i><span class="badge" id="cartBadge">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MOBILE NAV DRAWER ============ -->
+<div class="mobile-nav" id="mobileNav">
+  <nav>
+    <a href="#collections" class="mobile-nav__link">Collections</a>
+    <a href="#bestsellers" class="mobile-nav__link">Best Sellers</a>
+    <a href="#about" class="mobile-nav__link">About</a>
+    <a href="#reviews" class="mobile-nav__link">Reviews</a>
+    <a href="#contact" class="mobile-nav__link">Contact</a>
+  </nav>
+  <p class="mobile-nav__note">Complimentary shipping on every order.</p>
+</div>
+<div class="overlay" id="overlay"></div>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay">
+  <button class="search-overlay__close" id="searchClose" aria-label="Close search"><i class="fa-light fa-xmark"></i></button>
+  <div class="search-overlay__inner">
+    <label for="searchInput" class="search-overlay__label">What are you looking for?</label>
+    <input type="text" id="searchInput" class="search-overlay__input" placeholder="Search bracelets, materials, gifts…" autocomplete="off">
+    <div class="search-overlay__suggestions">
+      <span>Chain bracelets</span>
+      <span>Gifts under $200</span>
+      <span>Men's cuffs</span>
+      <span>Diamond pieces</span>
+    </div>
+    <div class="search-overlay__results" id="searchResults"></div>
+  </div>
+</div>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <p class="hero__kicker">Handcrafted in small batches</p>
+        <h1 class="hero__headline">Wear Your<br><em>Story.</em></h1>
+        <p class="hero__sub">Each AUREL bracelet is shaped by hand from 18k gold vermeil and recycled sterling silver — built to be worn daily, and passed on after.</p>
+        <div class="hero__ctas">
+          <a href="#collections" class="btn btn--gold magnetic">Explore Collection</a>
+          <a href="#bestsellers" class="btn btn--ghost magnetic">Shop Best Sellers</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img class="hero__product" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1200&auto=format&fit=crop" alt="AUREL gold chain bracelet on a marble surface" loading="eager">
+        <div class="hero__glow"></div>
+      </div>
+    </div>
+    <div class="hero__scroll-cue">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTIONS ============ -->
+  <section class="section" id="collections">
+    <div class="section__head">
+      <p class="section__kicker">The Range</p>
+      <h2 class="section__title">Six ways to wear gold.</h2>
+      <p class="section__desc">From the barely-there chain to the sculptural cuff — every collection is designed to layer, stack, or stand alone.</p>
+    </div>
+
+    <div class="collection-grid" id="collectionGrid"></div>
+  </section>
+
+  <!-- ============ BEST SELLERS ============ -->
+  <section class="section section--dark" id="bestsellers">
+    <div class="section__head section__head--light">
+      <p class="section__kicker">Most Loved</p>
+      <h2 class="section__title">Best sellers this season.</h2>
+      <p class="section__desc">The pieces our clients reorder in every finish.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filter-bar__cats" id="filterCats">
+        <button class="filter-chip is-active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="chain">Chains</button>
+        <button class="filter-chip" data-filter="cuff">Cuffs</button>
+        <button class="filter-chip" data-filter="beaded">Beaded</button>
+        <button class="filter-chip" data-filter="diamond">Diamond</button>
+      </div>
+      <div class="filter-bar__price">
+        <label for="priceRange">Under $<span id="priceValue">450</span></label>
+        <input type="range" id="priceRange" min="80" max="450" value="450" step="10">
+      </div>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- ============ WHY CHOOSE US ============ -->
+  <section class="section" id="why">
+    <div class="section__head">
+      <p class="section__kicker">The AUREL Standard</p>
+      <h2 class="section__title">What every piece carries with it.</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature reveal">
+        <i class="fa-light fa-gem"></i>
+        <h3>Premium Materials</h3>
+        <p>18k gold vermeil over recycled sterling silver, or solid 14k gold on request.</p>
+      </div>
+      <div class="feature reveal">
+        <i class="fa-light fa-hand-sparkles"></i>
+        <h3>Handcrafted Design</h3>
+        <p>Formed, soldered, and polished by hand in our Lisbon atelier.</p>
+      </div>
+      <div class="feature reveal">
+        <i class="fa-light fa-box-heart"></i>
+        <h3>Secure Packaging</h3>
+        <p>Arrives in a solid oak keepsake box with a signed authenticity card.</p>
+      </div>
+      <div class="feature reveal">
+        <i class="fa-light fa-truck-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>Dispatched within 24 hours; tracked delivery in 2–5 business days.</p>
+      </div>
+      <div class="feature reveal">
+        <i class="fa-light fa-rotate-left"></i>
+        <h3>Easy Returns</h3>
+        <p>30 days to try it on. Free returns, no questions asked.</p>
+      </div>
+      <div class="feature reveal">
+        <i class="fa-light fa-lock"></i>
+        <h3>Secure Payments</h3>
+        <p>Encrypted checkout via Stripe. We never store your card details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about__image">
+      <img src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?q=80&w=1100&auto=format&fit=crop" alt="Goldsmith shaping a bracelet by hand in the AUREL atelier" loading="lazy">
+    </div>
+    <div class="about__copy">
+      <p class="section__kicker">Since 2016</p>
+      <h2 class="about__title">Made slowly, on purpose.</h2>
+      <p class="about__text">AUREL began on a workbench in Lisbon, where founder Inês Duarte was trained in traditional goldsmithing before deciding the trade needed fewer, better pieces rather than more of them.</p>
+      <p class="about__text">Every chain is still cut, formed, and soldered by hand. We work almost entirely in recycled precious metals, and we test every clasp a hundred times before it reaches a wrist.</p>
+      <div class="about__stats">
+        <div><span>9</span><p>Years crafting</p></div>
+        <div><span>40k+</span><p>Bracelets worn</p></div>
+        <div><span>92%</span><p>Recycled metal</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIMITED EDITION ============ -->
+  <section class="limited" id="limited">
+    <img class="limited__bg" src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?q=80&w=1600&auto=format&fit=crop" alt="Limited edition diamond bracelet in low light" loading="lazy">
+    <div class="limited__overlay"></div>
+    <div class="limited__content">
+      <p class="section__kicker section__kicker--light">Autumn Drop, No. 07</p>
+      <h2 class="limited__title">Limited Pieces.<br>Timeless Style.</h2>
+      <p class="limited__desc">Nine bracelets from this run remain. Each is individually numbered and won't be remade once sold.</p>
+      <div class="countdown" id="countdown">
+        <div><span id="cdDays">00</span><small>Days</small></div>
+        <div><span id="cdHours">00</span><small>Hours</small></div>
+        <div><span id="cdMins">00</span><small>Mins</small></div>
+        <div><span id="cdSecs">00</span><small>Secs</small></div>
+      </div>
+      <a href="#bestsellers" class="btn btn--gold magnetic">Shop Limited Edition</a>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <section class="section" id="reviews">
+    <div class="section__head">
+      <p class="section__kicker">In Their Words</p>
+      <h2 class="section__title">Worn every day, by people who notice details.</h2>
+    </div>
+    <div class="reviews-slider">
+      <div class="reviews-track" id="reviewsTrack"></div>
+      <div class="reviews-nav">
+        <button id="reviewPrev" aria-label="Previous review"><i class="fa-light fa-arrow-left"></i></button>
+        <div class="reviews-dots" id="reviewsDots"></div>
+        <button id="reviewNext" aria-label="Next review"><i class="fa-light fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOCIAL ============ -->
+  <section class="section section--dark" id="social">
+    <div class="section__head section__head--light">
+      <p class="section__kicker">@aurel.bracelets</p>
+      <h2 class="section__title">Follow the pieces into daily life.</h2>
+    </div>
+    <div class="social-grid" id="socialGrid"></div>
+    <div class="social-cta">
+      <a href="https://instagram.com" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Follow Our Journey</a>
+    </div>
+  </section>
+
+  <!-- ============ NEWSLETTER ============ -->
+  <section class="newsletter">
+    <h2 class="newsletter__title">Join the Inner Circle.</h2>
+    <p class="newsletter__sub">New drops, early access, and one useful email a month — nothing more.</p>
+    <form class="newsletter__form" id="newsletterForm">
+      <input type="email" required placeholder="Your email address" id="newsletterEmail">
+      <button type="submit" class="btn btn--gold magnetic">Subscribe</button>
+    </form>
+    <p class="newsletter__privacy">We respect your inbox. Unsubscribe anytime.</p>
+    <div class="newsletter__success" id="newsletterSuccess">
+      <i class="fa-light fa-circle-check"></i> You're in. Welcome to the circle.
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="contact" id="contact">
+    <div class="contact__info">
+      <p class="section__kicker">Get in Touch</p>
+      <h2 class="section__title">Questions before you order?</h2>
+      <ul class="contact__list">
+        <li><i class="fa-light fa-envelope"></i> hello@aurelbracelets.com</li>
+        <li><i class="fa-light fa-phone"></i> +1 (415) 555-0148</li>
+        <li><i class="fa-light fa-clock"></i> Mon–Fri, 9am–6pm GMT</li>
+      </ul>
+      <div class="contact__socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      </div>
+    </div>
+    <form class="contact__form" id="contactForm">
+      <div class="form-row">
+        <div class="form-field">
+          <input type="text" id="cName" required placeholder=" ">
+          <label for="cName">Name</label>
+        </div>
+        <div class="form-field">
+          <input type="email" id="cEmail" required placeholder=" ">
+          <label for="cEmail">Email</label>
+        </div>
+      </div>
+      <div class="form-field">
+        <input type="tel" id="cPhone" placeholder=" ">
+        <label for="cPhone">Phone (optional)</label>
+      </div>
+      <div class="form-field">
+        <textarea id="cMessage" required placeholder=" " rows="4"></textarea>
+        <label for="cMessage">Message</label>
+      </div>
+      <button type="submit" class="btn btn--gold magnetic">Send Message</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer__top">
+    <div class="footer__brand">
+      <a href="#home" class="header__logo">AUREL</a>
+      <p>Fine bracelets, handcrafted in Lisbon from recycled precious metals. Built to be worn every day.</p>
+      <div class="footer__socials">
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+        <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      </div>
+    </div>
+    <div class="footer__col">
+      <h4>Shop</h4>
+      <a href="#collections">All Collections</a>
+      <a href="#bestsellers">Best Sellers</a>
+      <a href="#limited">Limited Edition</a>
+      <a href="#">Gift Cards</a>
+    </div>
+    <div class="footer__col">
+      <h4>Support</h4>
+      <a href="#contact">Contact Us</a>
+      <a href="#">Size Guide</a>
+      <a href="#">Shipping Policy</a>
+      <a href="#">Return Policy</a>
+    </div>
+    <div class="footer__col">
+      <h4>Company</h4>
+      <a href="#about">Our Story</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms &amp; Conditions</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <p>&copy; <span id="year"></span> AUREL Bracelets. All rights reserved.</p>
+    <p>Crafted with care in Lisbon, Portugal.</p>
+  </div>
+</footer>
+
+<!-- ============ BACK TO TOP ============ -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-light fa-arrow-up"></i></button>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer__head">
+    <h3>Your Bag</h3>
+    <button id="cartClose" aria-label="Close bag"><i class="fa-light fa-xmark"></i></button>
+  </div>
+  <div class="cart-drawer__items" id="cartItems"></div>
+  <div class="cart-drawer__empty" id="cartEmpty">
+    <i class="fa-light fa-bag-shopping"></i>
+    <p>Your bag is empty.</p>
+  </div>
+  <div class="cart-drawer__footer" id="cartFooter">
+    <div class="cart-drawer__subtotal">
+      <span>Subtotal</span>
+      <span id="cartSubtotal">$0</span>
+    </div>
+    <p class="cart-drawer__note">Shipping and taxes calculated at checkout.</p>
+    <button class="btn btn--gold" id="checkoutBtn">Checkout</button>
+  </div>
+</div>
+
+<!-- ============ QUICK VIEW MODAL ============ -->
+<div class="modal" id="quickViewModal">
+  <div class="modal__backdrop" id="modalBackdrop"></div>
+  <div class="modal__panel" id="modalPanel"></div>
+</div>
+
+<!-- ============ TOASTS ============ -->
+<div class="toast-stack" id="toastStack"></div>
+
+<!-- ============ AI SHOPPING ASSISTANT ============ -->
+<button class="ai-fab" id="aiFab" aria-label="Open shopping assistant">
+  <i class="fa-light fa-sparkles"></i>
+</button>
+
+<div class="ai-chat" id="aiChat">
+  <div class="ai-chat__head">
+    <div class="ai-chat__title">
+      <div class="ai-chat__avatar"><i class="fa-light fa-sparkles"></i></div>
+      <div>
+        <h4>AUREL Stylist</h4>
+        <span>Online now</span>
+      </div>
+    </div>
+    <button id="aiChatClose" aria-label="Close chat"><i class="fa-light fa-xmark"></i></button>
+  </div>
+  <div class="ai-chat__body" id="aiChatBody"></div>
+  <div class="ai-chat__quick" id="aiChatQuick">
+    <button data-q="find">Find My Bracelet</button>
+    <button data-q="bestsellers">Best Sellers</button>
+    <button data-q="gift">Gift Ideas</button>
+    <button data-q="size">Size Guide</button>
+    <button data-q="shipping">Shipping</button>
+  </div>
+  <form class="ai-chat__input" id="aiChatForm">
+    <input type="text" id="aiChatInput" placeholder="Ask about materials, sizing, gifts…" autocomplete="off">
+    <button type="submit" aria-label="Send"><i class="fa-light fa-paper-plane-top"></i></button>
+  </form>
+</div>
+
+<!-- ============ WHATSAPP BUTTON ============ -->
+<a class="whatsapp-fab" id="whatsappFab" href="https://wa.me/14155550148" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+  <span class="whatsapp-fab__tooltip">Chat with us</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
